@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div id="slider-container"></div>
+    </main>
+    <script src="EnhancedSimpleSidebar.js"></script>
+    <script type="module">
+        import { VariableManager } from './VariableManager.js';
+
+        VariableManager.add('myVariable', 50);
+
+        const mySlider = VariableManager.inputSlider('myVariable');
+
+        const sliderContainer = document.getElementById('slider-container');
+        sliderContainer.appendChild(mySlider);
+    </script>
+</body>
+</html>
