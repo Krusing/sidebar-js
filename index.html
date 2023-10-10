@@ -4,21 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="VariableManager.css">
 </head>
 <body>
     <main>
-        <div id="slider-container"></div>
+        <div id="slider-container" class="vm-slider">
+        </div>
+        <!-- <div id="slider-container"></div> -->
+        <!-- <span id="variable-container"></span> -->
     </main>
     <script src="EnhancedSimpleSidebar.js"></script>
     <script type="module">
-        import { VariableManager } from './VariableManager.js';
+        import { VariableManager as vm } from './VariableManager.js';
 
-        VariableManager.add('myVariable', 50);
 
-        const mySlider = VariableManager.inputSlider('myVariable');
 
-        const sliderContainer = document.getElementById('slider-container');
-        sliderContainer.appendChild(mySlider);
+        // vm.add('myVariable', 50);
+        // vm.link('myVariable', 'variable-container');
+        vm.addSliderLink('myVariable', 50, 'slider-container');
+
+        // const mySlider = vm.addSlider('myVariable');
+        // const sliderContainer = document.getElementById('slider-container');
+
+        // sliderContainer.appendChild(mySlider);
     </script>
 </body>
 </html>
